@@ -14,7 +14,7 @@ class PostsSpider(scrapy.Spider):
             if len(quote) + len(author) < 280:
                 yield {
                     'quote': quote,
-                    'author': '@jordanbpeterson'
+                    'author': author
                 }
         next_page = response.css('a.next_pager::attr(href)').get()
         if next_page is not None:
